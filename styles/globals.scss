@@ -1,0 +1,81 @@
+
+$color-bg: #FFFFFF;
+$color-navbar: #F5C6B1;
+$color-accent: #F6976D;
+$color-button: #E36934;
+$color-text: #000000;
+$color-text2: #FFFFFF;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+// Loader
+.loader {
+  border: 10px solid white; 
+  border-top: 10px solid $color-accent; 
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+//Navbar
+.navbar {
+  height: 70px;
+  width: 100vw;
+  background: $color-navbar;
+
+  padding: 0 10vw;
+  z-index: 99;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0px 12px 9px -12px rgba(0, 0, 0, 0.1);
+
+  .logo {
+    height: 30px;
+    position: absolute;
+    left: 10vw;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  button {
+    border: none;
+    background: $color-button;
+    color: $color-text2;
+    font-weight: 700;
+    padding: 0.7em 3em;
+    border-radius: 3px;
+    border: 2px solid $color-button;
+
+    position: absolute;
+    right: 10vw;
+
+    box-shadow: 0px 12px 9px -12px rgba(0, 0, 0, 0.1);
+
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      background: transparent;
+      color: $color-button;
+      cursor: pointer;
+    }
+  }
+}
