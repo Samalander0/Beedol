@@ -15,7 +15,7 @@ export default function Navbar() {
       {username && (
         <>
           <div className="buttons">
-            <button onClick={signOut}>Sign Out</button>
+            <button>Sign Out</button>
             <Link href="/admin">
               <button>Write Posts</button>
             </Link>
@@ -29,7 +29,7 @@ export default function Navbar() {
       {/* user is not signed OR has not created username */}
       {!username && (
         <div className="buttons">
-          <Link href="/enter">
+          <Link href="/signIn">
             <button>Log in</button>
           </Link>
         </div>
