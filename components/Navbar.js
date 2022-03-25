@@ -19,10 +19,10 @@ export default function Navbar() {
             <Link href="/admin">
               <button>Write Posts</button>
             </Link>
+            <Link href={`/${username}`}>
+              <img src={user ?.photoURL} />
+            </Link>
           </div>
-          <Link href={`/${username}`}>
-            <img src={user ?.photoURL} />
-          </Link>
         </>
       )}
 

@@ -7,6 +7,7 @@ Navbar styling for when user is signed in
 User profile page
 */
 
+@import url("https://use.typekit.net/oue1wyi.css"); //Import font from Adobe Fonts
 
 $color-bg: #FFFFFF;
 $color-navbar: #F5C6B1;
@@ -20,6 +21,11 @@ body {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
+
+  font-family: neue-haas-grotesk-text, sans-serif;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: neue-haas-grotesk-display, sans-serif;
 }
 
 a {
@@ -43,7 +49,7 @@ a {
 
 //Navbar
 .navbar {
-  height: 70px;
+  min-height: 70px;
   width: 100vw;
   background: $color-navbar;
 
@@ -67,24 +73,36 @@ a {
     position: absolute;
     right: 10vw;
     display: flex;
-  }
-  button {
-    border: none;
-    background: $color-button;
-    color: $color-text2;
-    font-weight: 700;
-    padding: 0.7em 3em;
-    border-radius: 3px;
-    border: 2px solid $color-button;
+    align-items: center;
 
-    box-shadow: 0px 12px 9px -12px rgba(0, 0, 0, 0.1);
+    img { //PFP
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
 
-    transition: 0.2s ease-in-out;
-
-    &:hover {
-      background: transparent;
-      color: $color-button;
-      cursor: pointer;
+      box-shadow: 0px 12px 9px -12px rgba(0, 0, 0, 0.1);
+    }
+    button {
+      border: none;
+      background: $color-button;
+      color: $color-text2;
+      font-weight: 500;
+      padding: 0.7em 3em;
+      height: fit-content;
+      border-radius: 3px;
+      border: 2px solid $color-button;
+      font-family: neue-haas-grotesk-text, sans-serif;
+      margin-right: 1rem;
+  
+      box-shadow: 0px 12px 9px -12px rgba(0, 0, 0, 0.1);
+  
+      transition: 0.2s ease-in-out;
+  
+      &:hover {
+        background: transparent;
+        color: $color-button;
+        cursor: pointer;
+      }
     }
   }
 }
