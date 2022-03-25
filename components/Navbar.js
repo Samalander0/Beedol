@@ -1,21 +1,25 @@
 import Link from 'next/link';
+import {useContext} from 'react';
+import {UserContext} from '../lib/context';
 
 export default function Navbar() {
-  const user = true;
-  const username = true;
-
+  const { user, username } = useContext(UserContext);
+  
   return (
     <nav className="navbar">
-      <Link href="#">
+      <Link href="./#">
         <img src="/logo.svg" className="logo" />
       </Link>
 
       {/* user is signed-in and has username */}
       {username && (
         <>
-          <Link href="/admin">
-            <button>Write Posts</button>
-          </Link>
+          <div className="buttons">
+            <button onClick={signOut}>Sign Out</button>
+            <Link href="/admin">
+              <button>Write Posts</button>
+            </Link>
+          </div>
           <Link href={`/${username}`}>
             <img src={user ?.photoURL} />
           </Link>
@@ -24,9 +28,11 @@ export default function Navbar() {
 
       {/* user is not signed OR has not created username */}
       {!username && (
-        <Link href="/enter">
-          <button>Log in</button>
-        </Link>
+        <div className="buttons">
+          <Link href="/enter">
+            <button>Log in</button>
+          </Link>
+        </div>
       )}
     </nav >
   );

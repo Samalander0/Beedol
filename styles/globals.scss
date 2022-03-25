@@ -45,8 +45,6 @@ a {
   justify-content: center;
   align-items: center;
 
-  box-shadow: 0px 12px 9px -12px rgba(0, 0, 0, 0.1);
-
   .logo {
     height: 30px;
     position: absolute;
@@ -56,6 +54,11 @@ a {
       cursor: pointer;
     }
   }
+  .buttons {
+    position: absolute;
+    right: 10vw;
+    display: flex;
+  }
   button {
     border: none;
     background: $color-button;
@@ -64,9 +67,6 @@ a {
     padding: 0.7em 3em;
     border-radius: 3px;
     border: 2px solid $color-button;
-
-    position: absolute;
-    right: 10vw;
 
     box-shadow: 0px 12px 9px -12px rgba(0, 0, 0, 0.1);
 
