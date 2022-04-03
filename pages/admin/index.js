@@ -1,10 +1,95 @@
-import Head from 'next/head'
-import Image from 'next/image'
+import styles from '../../styles/Admin.module.scss';
+import AuthCheck from '../../components/AuthCheck';
+import PostFeed from '../../components/PostFeed';
+import { UserContext } from '../../lib/context';
+import { firestore, auth, serverTimestamp } from '../../lib/firebase';
 
-export default function Admin({}) {
+import { useContext, useState } from 'react';
+import { useRouter } from 'next/router';
+
+import { useCollection } from 'react-firebase-hooks/firestore';
+import kebabCase from 'lodash.kebabcase';
+import toast from 'react-hot-toast';
+
+export default function AdminPostsPage(props) {
   return (
     <main>
-      <h1>Admin</h1>
+      <AuthCheck>
+        <PostList />
+        <CreateNewPost />
+      </AuthCheck>
     </main>
-  )
+  );
+}
+
+function PostList() {
+  const ref = firestore.collection('users').doc(auth.currentUser.uid).collection('posts');
+  const query = ref.orderBy('createdAt');
+  const [querySnapshot] = useCollection(query);
+
+  const posts = querySnapshot?.docs.map((doc) => doc.data());
+
+  return (
+    <>
+      <h1>Manage your Posts</h1>
+      <PostFeed posts={posts} admin />
+    </>
+  );
+}
+
+function CreateNewPost() {
+  const router = useRouter();
+  const { username } = useContext(UserContext);
+  const [title, setTitle] = useState('');
+
+  // Ensure slug is URL safe (Kebab case strips out all characters like &/ and %)
+  const slug = encodeURI(kebabCase(title));
+
+  // Validate length
+  const isValid = title.length > 3 && title.length < 100;
+
+  // Create a new post in firestore
+  const createPost = async (e) => {
+    e.preventDefault();
+    const uid = auth.currentUser.uid;
+    const ref = firestore.collection('users').doc(uid).collection('posts').doc(slug);
+
+    // Tip: give all fields a default value here
+    const data = {
+      title,
+      slug,
+      uid,
+      username,
+      published: false,
+      content: '# How To...',
+      createdAt: serverTimestamp(), //Server timestamp from firestore
+      updatedAt: serverTimestamp(),
+      heartCount: 0,
+    };
+
+    await ref.set(data); //Comit the doccument to firestore
+
+    toast.success('Post created!')
+
+    // Imperative navigation after doc is set
+    router.push(`/admin/${slug}`);
+
+  };
+
+  return (
+    <form onSubmit={createPost}>
+      <input
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        placeholder="How to..."
+        className={styles.input}
+      />
+      <p>
+        <strong>Slug:</strong> {slug}
+      </p>
+      <button type="submit" disabled={!isValid} className="btn-green">
+        Create New Post
+      </button>
+    </form>
+  );
 }

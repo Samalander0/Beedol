@@ -7,6 +7,13 @@ export async function getServerSideProps({ query }) {
 
   const userDoc = await getUserWithUsername(username);
 
+  // If the user doesn't exist, tell Next to render the 404 page
+  if (!userDoc) {
+    return {
+      notFound: true,
+    };
+  }
+
   // JSON serializable data
   let user = null;
   let posts = null;
