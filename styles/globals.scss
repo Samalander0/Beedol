@@ -117,6 +117,8 @@ a {
   padding: 1rem 3rem;
   border-radius: 5px;
 
+  box-shadow: 0px 12px 9px -12px rgba(0, 0, 0, 0.15);
+
   transition: 0.3s ease-in-out;
 
   &:hover {
@@ -132,9 +134,11 @@ a {
 }
 
 .loadMoreButton {
+  margin-left: 10vw;
+}
+button {
   font-family: neue-haas-grotesk-text, sans-serif;
   
-  margin-left: 10vw;
   background: $color-button;
   color: $color-text2;
   border: 2px solid $color-button;
@@ -147,8 +151,26 @@ a {
   transition: 0.2s ease-in-out;
 
   &:hover {
-    background: $color-secondary;
+    background: transparent;
     color: $color-button;
     cursor: pointer;
+  }
+}
+
+.postEditor {
+  margin: 1rem 10vw;
+  width: 76vw;
+  min-height: 60vh;
+  padding: 2vw;
+
+  font-family: neue-haas-grotesk-text, sans-serif;
+
+  background: $color-secondary;
+  border: none;
+
+  border-radius: 5px;
+
+  &:focus {
+    outline: none;
   }
 }

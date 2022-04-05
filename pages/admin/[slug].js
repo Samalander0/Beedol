@@ -80,7 +80,7 @@ function PostForm({ defaultValues, postRef, preview }) {
 
       <div className={preview ? styles.hidden : styles.controls}>
         <ImageUploader/>
-        <textarea {...register('content')}>
+        <textarea {...register('content')} className="postEditor">
       </textarea>
 
       <fieldset>
