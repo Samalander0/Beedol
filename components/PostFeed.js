@@ -10,7 +10,7 @@ function PostItem({ post, admin = false }) {
   const minutesToRead = (wordCount / 100 + 1).toFixed(0);
 
   return (
-    <div className="card">
+    <div className="postCard">
       <Link href={`/${post.username}`}>
         <a>
           <strong>By @{post.username}</strong>
@@ -27,7 +27,7 @@ function PostItem({ post, admin = false }) {
         <span>
           {wordCount} words. {minutesToRead} min read
         </span>
-        <span className="push-left">💗 {post.heartCount || 0} Hearts</span>
+        <span className="heartCount">💗 {post.heartCount || 0} Hearts</span>
       </footer>
 
       {/* If admin view, show extra controls for user */}

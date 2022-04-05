@@ -7,12 +7,12 @@ export default function PostContent({ post }) {
 
   //Return the post's contnet. Uses React Markdown to allow us to use markdown
   return (
-    <div className="card">
+    <div className="post">
       <h1>{post?.title}</h1>
-      <span className="text-sm">
+      <span className="smallText">
         Written by{' '}
         <Link href={`/${post.username}/`}>
-          <a className="text-info">@{post.username}</a>
+          <a className="infoText">@{post.username}</a>
         </Link>{' '}
         on {createdAt.toISOString()}
       </span>

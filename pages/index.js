@@ -13,7 +13,7 @@ import { useState } from 'react';
 import Metatags from "../components/Metatags";
 
 // Max post to query per page
-const LIMIT = 1;
+const LIMIT = 3;
 
 export async function getServerSideProps(context) {
   const postsQuery = firestore
@@ -63,7 +63,7 @@ export default function Home(props) {
       <main>
         <PostFeed posts={posts} />
 
-        {!loading && !postsEnd && <button onClick={getMorePosts}>Load more</button>}
+        {!loading && !postsEnd && <button onClick={getMorePosts} className="loadMoreButton">Load more</button>}
 
         <Loader show={loading} />
 

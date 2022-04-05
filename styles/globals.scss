@@ -11,7 +11,7 @@ User profile page
 @import url("https://use.typekit.net/oue1wyi.css"); //Import font from Adobe Fonts
 
 $color-bg: #FFFFFF;
-$color-navbar: #F5C6B1;
+$color-secondary: #F5C6B1;
 $color-accent: #F6976D;
 $color-button: #E36934;
 $color-text: #000000;
@@ -24,6 +24,8 @@ body {
   overflow-x: hidden;
 
   font-family: neue-haas-grotesk-text, sans-serif;
+
+  background: white;
 }
 h1,h2,h3,h4,h5,h6 {
   font-family: neue-haas-grotesk-display, sans-serif;
@@ -42,6 +44,7 @@ a {
   width: 50px;
   height: 50px;
   animation: spin 2s linear infinite;
+  margin-left: 10vw;
 }
 @keyframes spin {
   0% { transform: rotate(0deg); }
@@ -52,7 +55,7 @@ a {
 .navbar {
   min-height: 70px;
   width: 100vw;
-  background: $color-navbar;
+  background: $color-secondary;
 
   padding: 0 10vw;
   z-index: 99;
@@ -105,5 +108,47 @@ a {
         cursor: pointer;
       }
     }
+  }
+}
+
+.postCard {
+  margin: 2rem 10vw;
+  background: $color-secondary;
+  padding: 1rem 3rem;
+  border-radius: 5px;
+
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    background: $color-accent;
+  }
+  
+  h2 { /* Post Title */
+    margin: 0.3em 0;
+  }
+  .heartCount {
+    display: block;
+  }
+}
+
+.loadMoreButton {
+  font-family: neue-haas-grotesk-text, sans-serif;
+  
+  margin-left: 10vw;
+  background: $color-button;
+  color: $color-text2;
+  border: 2px solid $color-button;
+  box-shadow: 0px 12px 9px -12px rgba(0, 0, 0, 0.1);
+
+  padding: 0.7em 3em;
+  height: fit-content;
+  border-radius: 3px;
+
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    background: $color-secondary;
+    color: $color-button;
+    cursor: pointer;
   }
 }
