@@ -9,9 +9,10 @@ Project Status: `In Development`
 - Hosting: `Replit`
 
 ## TO DO:
-- Fix Likes. Don't know why they're broken
+- ~~Fix Likes. Don't know why they're broken~~ :)
+  - ~~Downgrade to older versions of packages~~
 - Styling
-  - Design in XD
+  - ~~Design in XD~~
   - Code
 - Homepage
 - Featured Posts Page

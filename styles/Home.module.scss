@@ -1,0 +1,21 @@
+#header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 80vh;
+  width: 100vw;
+
+  #title {
+    height: fit-content;
+    
+    h1 {
+      font-size: 5rem;
+      font-weight: 800;
+      margin: 0;
+    }
+  }
+  aside {
+    
+  }
+}

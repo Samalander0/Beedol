@@ -16,7 +16,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <Link href="https://beedol.samalander.repl.co/">
-        <img src="/logo.svg" className="logo" />
+        <img src="/images/logo.svg" className="logo" />
       </Link>
 
       {/* user is signed-in and has username */}
@@ -27,7 +27,8 @@ export default function Navbar() {
             <Link href="/admin">
               <button>Write Posts</button>
             </Link>
-            <Link href={`/${username}`}>
+            {/* links to /username (href={`/${username}`}) */}
+            <Link href="">
               <img src={user ?.photoURL} />
             </Link>
           </div>
@@ -37,7 +38,8 @@ export default function Navbar() {
       {/* user is not signed OR has not created username */}
       {!username && (
         <div className="buttons">
-          <Link href="/signIn">
+          {/* links to /signIn */}
+          <Link href=""> 
             <button>Log in</button>
           </Link>
         </div>
