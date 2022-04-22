@@ -19,31 +19,32 @@ export default function Navbar() {
         <img src="/images/logo.svg" className="logo" />
       </Link>
 
-      {/* user is signed-in and has username */}
-      {username && (
-        <>
-          <div className="buttons">
-            <button onClick={signOut}>Sign Out</button>
+      <div className="buttons">
+        <Link href="/posts"> 
+          <button>Read Posts</button>
+        </Link>
+        
+        {/* user is signed-in and has username */}
+        {username && (
+          <>
             <Link href="/admin">
               <button>Write Posts</button>
             </Link>
+            <button onClick={signOut}>Sign Out</button>
             {/* links to /username (href={`/${username}`}) */}
             <Link href={`/${username}`}>
               <img src={user ?.photoURL} />
             </Link>
-          </div>
-        </>
-      )}
-
-      {/* user is not signed OR has not created username */}
-      {!username && (
-        <div className="buttons">
-          {/* links to /signIn */}
+          </>
+        )}
+  
+        {/* user is not signed OR has not created username */}
+        {!username && (
           <Link href=""> 
             <button>Log in</button>
           </Link>
-        </div>
-      )}
+        )}
+      </div>
     </nav >
   );
 }
