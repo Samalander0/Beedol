@@ -13,7 +13,7 @@ import { useState } from 'react';
 import Metatags from "../components/Metatags";
 
 // Max post to query per page
-const LIMIT = 3;
+const LIMIT = 6;
 
 export async function getServerSideProps(context) {
   const postsQuery = firestore
@@ -60,9 +60,13 @@ export default function Posts(props) {
 
   return (<>
       <Metatags title="Beedol"/>
-      <main>
-        <PostFeed posts={posts} />
-
+      <main id="main">
+        <h1>Recent Posts</h1>
+        <p>Check out the most recent posts from Beedol users!</p>
+        <div id="postFeed">
+          <PostFeed posts={posts} />
+        </div>
+        
         {!loading && !postsEnd && <button onClick={getMorePosts} className="loadMoreButton">Load more</button>}
 
         <Loader show={loading} />

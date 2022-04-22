@@ -91,17 +91,43 @@ a {
 }
 
 .postCard {
-  margin: 2rem 10vw;
-  background: $color-secondary;
-  padding: 1rem 3rem;
-  border-radius: 5px;
+  width: 250px;
+  height: 250px;
+  padding: 2rem;
+  
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
 
+  color: white;
+  
+  border-radius: 5px;
   box-shadow: 0px 12px 9px -12px rgba(0, 0, 0, 0.15);
 
   transition: 0.3s ease-in-out;
 
+  // Set Backgrounds
+  &:nth-of-type(5n-4) {
+    background-image: url(/images/gradient1.svg);
+  }
+  &:nth-of-type(5n-3) {
+    background-image: url(/images/gradient2.svg);
+  }
+  &:nth-of-type(5n-2) {
+    background-image: url(/images/gradient3.svg);
+  }
+  &:nth-of-type(5n-1) {
+    background-image: url(/images/gradient4.svg);
+  }
+  &:nth-of-type(5n) {
+    background-image: url(/images/gradient5.svg);
+  }
+  background-size: cover;
+
   &:hover {
-    background: $color-accent;
+    opacity: 0.8;
+    cursor: pointer;
   }
   
   h2 { /* Post Title */
@@ -111,10 +137,34 @@ a {
     display: block;
   }
 }
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
-.loadMoreButton {
-  margin-left: 10vw;
+  padding: 5rem 2rem;
+
+  h1 {
+    margin: 0;
+    font-size: 3rem;
+  }
+  P {
+    margin: 0;
+    max-width: 45ch;
+    text-align: center;
+  }
+  
+  #postFeed {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    width: fit-content;
+
+    margin: 3rem 0;
+  }  
 }
+
 button {
   font-family: neue-haas-grotesk-text, sans-serif;
   

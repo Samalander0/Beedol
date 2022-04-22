@@ -28,7 +28,7 @@ export default function Navbar() {
               <button>Write Posts</button>
             </Link>
             {/* links to /username (href={`/${username}`}) */}
-            <Link href="">
+            <Link href={`/${username}`}>
               <img src={user ?.photoURL} />
             </Link>
           </div>

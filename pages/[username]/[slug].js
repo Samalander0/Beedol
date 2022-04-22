@@ -1,6 +1,6 @@
 import styles from '../../styles/Post.module.scss';
-import PostContent from '../../components/PostContent';
-import HeartButton from '../../components/HeartButton';
+import ReactMarkdown from 'react-markdown';
+import LikeButton from '../../components/LikeButton';
 import AuthCheck from '../../components/AuthCheck';
 import Metatags from '../../components/Metatags';
 import { UserContext } from '../../lib/context';
@@ -59,27 +59,37 @@ export default function Post(props) {
 
   const { user: currentUser } = useContext(UserContext);
 
-  return (
-    <main className={styles.container}>
-      <Metatags title={post.title} description={post.title} />
-      
-      <section>
-        <PostContent post={post} />
-      </section>
+  const createdAt = typeof post?.createdAt === 'number' ? new Date(post.createdAt) : post.createdAt.toDate();
+  const date = createdAt.toISOString()
 
-      <aside className="card">
-        <p>
-          <strong>{post.heartCount || 0} 🤍</strong>
-        </p>
+  return (<>
+    <Metatags title={post.title} description={post.title} />
+    <main id={styles.main}>
+
+      <div id={styles.content}>
+        <ReactMarkdown>{post?.content}</ReactMarkdown> 
+      </div>
+
+      <aside id={styles.sidebar}>
+        <h1>{post?.title}</h1>
+        <span className="smallText">
+          Written by{' '}
+          <Link href={`/${post.username}/`}>
+            <a className="infoText">@{post.username}</a>
+          </Link>{' '}
+          on {date.substring(0,10)}
+        </span>
+        
+        <p id={styles.likeCount}>{post.heartCount || 0} 👍</p>
 
         <AuthCheck
           fallback={
             <Link href="/enter">
-              <button>🤍 Sign Up</button>
+              <button>👍 Sign Up</button>
             </Link>
           }
         >
-          <HeartButton postRef={postRef} />
+          <LikeButton postRef={postRef} />
         </AuthCheck>
 
         {currentUser?.uid === post.uid && (
@@ -89,5 +99,5 @@ export default function Post(props) {
         )}
       </aside>
     </main>
-  );
+  </>);
 }
