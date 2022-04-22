@@ -63,7 +63,7 @@ export default function Posts(props) {
       <main id="main">
         <h1>Recent Posts</h1>
         <p>Check out the most recent posts from Beedol users!</p>
-        <div id="postFeed">
+        <div className="postFeed">
           <PostFeed posts={posts} />
         </div>
         

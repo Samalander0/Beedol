@@ -1,12 +1,10 @@
 // UI component for user profile
 export default function UserProfile({ user }) {
   return (
-    <div className="box-center">
-      <img src={user.photoURL || '/hacker.png'} className="userImage" />
-      <p>
-        <i>@{user.username}</i>
-      </p>
-      <h1>{user.displayName || 'Anonymous User'}</h1>
+    <div className="userProfile">
+      <img src={user.photoURL}/>
+      <h1>{user.displayName}</h1>
+      <p>@{user.username}</p>
     </div>
   );
 }

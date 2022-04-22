@@ -15,7 +15,7 @@ export default function Navbar() {
   
   return (
     <nav className="navbar">
-      <Link href="https://beedol.samalander.repl.co/">
+      <Link href="/">
         <img src="/images/logo.svg" className="logo" />
       </Link>
 

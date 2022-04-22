@@ -13,7 +13,7 @@ import toast from 'react-hot-toast';
 
 export default function AdminPostsPage(props) {
   return (
-    <main>
+    <main className="adminPage">
       <AuthCheck>
         <PostList />
         <CreateNewPost />
@@ -32,7 +32,9 @@ function PostList() {
   return (
     <>
       <h1>Manage your Posts</h1>
-      <PostFeed posts={posts} admin />
+      <div className="postFeed">
+        <PostFeed posts={posts} admin />
+      </div>
     </>
   );
 }
@@ -77,16 +79,17 @@ function CreateNewPost() {
   };
 
   return (
-    <form onSubmit={createPost}>
+    <form onSubmit={createPost} className="createPost">
       <input
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="How to..."
         className={styles.input}
+        required
       />
-      <p>
+      {/*<p>
         <strong>Slug:</strong> {slug}
-      </p>
+      </p>*/}
       <button type="submit" disabled={!isValid} className="btn-green">
         Create New Post
       </button>
