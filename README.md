@@ -15,4 +15,6 @@ Project Status: `In Development`
   - ~~Design in XD~~
   - Code
 - Homepage
-- Featured Posts Page
+  - Text
+  - Posts
+- Featured Posts
