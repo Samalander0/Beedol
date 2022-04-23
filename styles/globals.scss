@@ -326,3 +326,65 @@ button {
 
   height: calc(100vh - 70px);
 }
+.signIn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  height: calc(100vh - 70px);
+  
+  h1 {
+    margin: 0;
+  }
+  p {
+    margin: 0 0 1rem 0;
+  }
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+
+    img {
+      margin-right: 1rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
+  h3 {
+    margin: 0;
+  }
+  input {
+  border: none;
+
+    padding: 0.3rem 2rem;
+    border-radius: 300px;
+
+    box-shadow: 0px 12px 9px -12px rgba(0, 0, 0, 0.2);
+
+    font-weight: 500;
+
+    color: white;
+
+    transition: 0.3s ease-in-out;
+
+    &:focus {
+      outline: none;
+    }
+
+    background: #80D0C7;
+  }
+  input::placeholder {
+    color: #F0F0F0;
+  }
+  .disabled {
+    background: #F27851;
+    position: relative;
+  }
+  form p {
+    font-size: 0.8rem;
+    font-weight: 300;
+  }
+}

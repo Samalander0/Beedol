@@ -17,7 +17,9 @@ export default function Enter(props) {
   // 3. user signed in, has username <SignOutButton />
   return (<>
     <Metatags title="Sign Up/Sign In" description="Create an account or sign in to Beedol"/>
-    <main>
+    <main className="signIn">
+      <h1>Sign In/Create an Account</h1>
+      <p>Welcome to the Beedol Community! Create an account or sign in to your existing account here!</p>
       {user ? !username ? <UsernameForm /> : <SignOutButton /> : <SignInButton />}
     </main>
   </>);
@@ -31,7 +33,7 @@ function SignInButton() {
 
   return (
       <button className="btn-google" onClick={signInWithGoogle}>
-        <img src={'/google.png'} width="30px" /> Sign in with Google
+        <img src="https://lh3.googleusercontent.com/COxitqgJr1sJnIDe8-jiKhxDx1FrYbtRHKJ9z_hELisAlapwE9LUPh6fcXIfb5vwpbMl4xl9H9TRFPc5NOO8Sb3VSgIBrfRYvW6cUA" width="30px" /> Sign in with Google
       </button>
   );
 }
@@ -109,12 +111,13 @@ function UsernameForm() {
       <section>
         <h3>Choose Username</h3>
         <form onSubmit={onSubmit}>
-          <input name="username" placeholder="myname" value={formValue} onChange={onChange} />
+          <input name="username" placeholder="myname" value={formValue} onChange={onChange} className={!isValid ? "disabled" : null}/>
           <UsernameMessage username={formValue} isValid={isValid} loading={loading} />
           <button type="submit" className="btn-green" disabled={!isValid}>
             Choose
           </button>
 
+          {/*
           <h3>Debug State</h3>
           <div>
             Username: {formValue}
@@ -123,6 +126,7 @@ function UsernameForm() {
             <br />
             Username Valid: {isValid.toString()}
           </div>
+          */}
         </form>
       </section>
     )
@@ -134,9 +138,9 @@ function UsernameMessage({ username, isValid, loading }) {
   if (loading) {
     return <p>Checking...</p>;
   } else if (isValid) {
-    return <p className="textSuccess">{username} is available!</p>;
+    return <p>{username} is available!</p>;
   } else if (username && !isValid) {
-    return <p className="textDanger">That username is taken!</p>;
+    return <p>That username is taken or is too short!</p>;
   } else {
     return <p></p>;
   }
