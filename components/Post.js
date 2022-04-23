@@ -43,7 +43,7 @@ export default function Post({
               </h3>
             </Link>
   
-            {published ? <p className="text-success">Live</p> : <p className="text-danger">Unpublished</p>}
+            {published ? <p className="published">Live</p> : <p className="unpublished">Unpublished</p>}
           </>
         )}
       </div>

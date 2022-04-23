@@ -11,15 +11,18 @@ import { useCollection } from 'react-firebase-hooks/firestore';
 import kebabCase from 'lodash.kebabcase';
 import toast from 'react-hot-toast';
 
+import Metatags from "../../components/Metatags";
+
 export default function AdminPostsPage(props) {
-  return (
+  return (<>
+    <Metatags title="Beedol Admin" description="Write & edit your posts"/>
     <main className="adminPage">
       <AuthCheck>
         <PostList />
         <CreateNewPost />
       </AuthCheck>
     </main>
-  );
+  </>);
 }
 
 function PostList() {
@@ -48,7 +51,7 @@ function CreateNewPost() {
   const slug = encodeURI(kebabCase(title));
 
   // Validate length
-  const isValid = title.length > 3 && title.length < 100;
+  const isValid = title.length > 7 && title.length < 100;
 
   // Create a new post in firestore
   const createPost = async (e) => {
@@ -63,7 +66,8 @@ function CreateNewPost() {
       uid,
       username,
       published: false,
-      content: '# How To...',
+      featured: false,
+      content: '# How to...',
       createdAt: serverTimestamp(), //Server timestamp from firestore
       updatedAt: serverTimestamp(),
       heartCount: 0,
@@ -84,15 +88,15 @@ function CreateNewPost() {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="How to..."
-        className={styles.input}
-        required
+        className={!isValid ? "disabled" : null}
       />
       {/*<p>
         <strong>Slug:</strong> {slug}
       </p>*/}
-      <button type="submit" disabled={!isValid} className="btn-green">
+      <button type="submit" disabled={!isValid}>
         Create New Post
       </button>
+      <p id="errorMessage" className={isValid ? "hidden" : null}>☝️ Write a title!</p>
     </form>
   );
 }

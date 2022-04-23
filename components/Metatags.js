@@ -6,14 +6,14 @@ import Head from 'next/head';
 
 export default function Metatags({
   title = 'Beedol App',
-  description = 'Just a test for the Beedol App metatags!',
-  image = 'https://unsplash.it/500',
+  description = 'Education related how to posts by students, for students!',
+  image = '/card.png',
 }) {
   return (
     <Head>
       <title>{title}</title>
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:site" content="@fireship_dev" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="beedol.app" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />

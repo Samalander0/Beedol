@@ -138,6 +138,12 @@ a {
   .heartCount {
     display: block;
   }
+
+  .published, .unpublished {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
 }
 #main {
   display: flex;
@@ -173,7 +179,7 @@ button {
   background-size: cover;
   color: white;
   border: none;
-  box-shadow: 0px 12px 9px -12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 12px 9px -12px rgba(0, 0, 0, 0.2);
 
   padding: 0.4em 3em;
   height: fit-content;
@@ -210,24 +216,6 @@ button {
     &:after {
       transform: scale(1);
     }
-  }
-}
-
-.postEditor {
-  margin: 1rem 10vw;
-  width: 76vw;
-  min-height: 60vh;
-  padding: 2vw;
-
-  font-family: neue-haas-grotesk-text, sans-serif;
-
-  background: $color-secondary;
-  border: none;
-
-  border-radius: 5px;
-
-  &:focus {
-    outline: none;
   }
 }
 
@@ -285,8 +273,56 @@ button {
   }
 
   form {
-    .button {
+    input {
+      border: none;
+
+      padding: 0.3rem 2rem;
+      border-radius: 300px;
+
+      box-shadow: 0px 12px 9px -12px rgba(0, 0, 0, 0.2);
+
+      font-weight: 500;
+
+      color: white;
+
+      transition: 0.3s ease-in-out;
+
+      &:focus {
+        outline: none;
+      }
+
+      background: #80D0C7;
+    }
+    input::placeholder {
+      color: #F0F0F0;
+    }
+    .disabled {
+      background: #F27851;
+      position: relative;
+    }
+    button {
       margin-left: 1rem;
     }
+
+    #errorMessage {
+      color: #F27851;
+      margin-top: -0.1rem;
+      font-size: 0.8rem;
+
+      position: absolute;
+
+      transition: 0.3s ease-in-out;
+    }
+    .hidden {
+      opacity: 0;
+    }
   }
+}
+.page404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  height: calc(100vh - 70px);
 }

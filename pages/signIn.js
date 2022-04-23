@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import Metatags from "../components/Metatags";
 
 import { auth, firestore, googleAuthProvider } from '../lib/firebase';
 import { UserContext } from '../lib/context';
@@ -14,11 +15,12 @@ export default function Enter(props) {
   // 1. user signed out <SignInButton />
   // 2. user signed in, but missing username <UsernameForm />
   // 3. user signed in, has username <SignOutButton />
-  return (
+  return (<>
+    <Metatags title="Sign Up/Sign In" description="Create an account or sign in to Beedol"/>
     <main>
       {user ? !username ? <UsernameForm /> : <SignOutButton /> : <SignInButton />}
     </main>
-  );
+  </>);
 }
 
 // Sign in with Google button

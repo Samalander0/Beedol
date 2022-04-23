@@ -59,7 +59,7 @@ export default function Posts(props) {
   };
 
   return (<>
-      <Metatags title="Beedol"/>
+      <Metatags title="Beedol Posts" description="Check out featured and recent posts by Beedol users!"/>
       <main id="main">
         <h1>Recent Posts</h1>
         <p>Check out the most recent posts from Beedol users!</p>

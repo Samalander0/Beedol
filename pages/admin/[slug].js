@@ -12,12 +12,15 @@ import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import toast from 'react-hot-toast';
 
+import Metatags from "../../components/Metatags";
+
 export default function AdminPostEdit(props) {
-  return (
+  return (<>
+    <Metatags title="Edit Post" description="Write & edit a post"/>
     <AuthCheck>
       <PostManager />
     </AuthCheck>
-  );
+  </>);
 }
 
 function PostManager() {
@@ -30,7 +33,7 @@ function PostManager() {
   const [post] = useDocumentData(postRef); //Listen to post in realtime
 
   return (
-    <main className={styles.container}>
+    <main id={styles.main}>
       {post && (
         <>
           <section>
@@ -41,11 +44,16 @@ function PostManager() {
           </section>
 
           <aside>
+            <h3>Info</h3>
+            <p>Here's where you can write a post! Style your post using <a href="https://commonmark.org/help/">Markdown</a>, and upload images and gifs bellow!</p>
+            
             <h3>Tools</h3>
             <button onClick={() => setPreview(!preview)}>{preview ? 'Edit' : 'Preview'}</button>
             <Link href={`/${post.username}/${post.slug}`}>
-              <button className="btn-blue">Live view</button>
+              <button>Live view</button>
             </Link>
+            
+            <ImageUploader/>
           </aside>
         </>
       )}
@@ -73,24 +81,21 @@ function PostForm({ defaultValues, postRef, preview }) {
   return (
     <form onSubmit={handleSubmit(updatePost)}>
       {preview && (
-        <div className="card">
+        <div id={styles.preview}>
           <ReactMarkdown>{watch('content')}</ReactMarkdown>
         </div>
       )}
 
       <div className={preview ? styles.hidden : styles.controls}>
-        <ImageUploader/>
-        <textarea {...register('content')} className="postEditor">
-      </textarea>
+        <textarea {...register('content')} id={styles.editor}></textarea>
 
-      <fieldset>
-        <input className={styles.checkbox} type="checkbox" {...register('published')} />
-        <label>Published</label>
-      </fieldset>
-
-      <button type="submit" disabled={!isDirty || !isValid}>
-        Save Changes
-        </button>
+        <div id={styles.save}>
+          <label id={styles.published}>Published <input type="checkbox" {...register('published')} id={styles.checkbox}/></label>
+  
+          <button type="submit" disabled={!isDirty || !isValid}>
+            Save Changes
+          </button>
+        </div>
       </div>
     </form >
   );

@@ -2,6 +2,8 @@ import { getUserWithUsername, postToJSON } from '../../lib/firebase';
 import UserProfile from '../../components/UserProfile';
 import PostFeed from '../../components/PostFeed';
 
+import Metatags from "../../components/Metatags";
+
 export async function getServerSideProps({ query }) {
   const { username } = query;
 
@@ -34,12 +36,13 @@ export async function getServerSideProps({ query }) {
 }
 
 export default function userProfilePage({user, posts}) {
-  return (
+  return (<>
+    <Metatags title={user} description="Beedol user page"/>
     <main className="userPage">
       <UserProfile user={user}/>
       <div className="postFeed">
         <PostFeed posts={posts}/>
       </div>
     </main>
-  );
+  </>);
 }

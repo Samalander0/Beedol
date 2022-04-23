@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { auth, storage, STATE_CHANGED } from '../lib/firebase';
 import Loader from './Loader';
+import styles from '../styles/Admin.module.scss';
+import toast from 'react-hot-toast';
 
 // Uploads images to Firebase Storage
 export default function ImageUploader() {
@@ -37,20 +39,23 @@ export default function ImageUploader() {
   };
 
   return (
-    <div className="box">
+    <div>
       <Loader show={uploading} />
       {uploading && <h3>{progress}%</h3>}
 
       {!uploading && (
         <>
-          <label className="btn">
+          <label id={styles.uploadImg}>
             📸 Upload Img
             <input type="file" onChange={uploadFile} accept="image/x-png,image/gif,image/jpeg" />
           </label>
         </>
       )}
 
-      {downloadURL && <code className="upload-snippet">{`![alt](${downloadURL})`}</code>}
+      {downloadURL && <>
+        <code id={styles.file}>{`![alt](${downloadURL})`}</code>
+        <p id={styles.fileMessage}>☝️ Copy this into the post!</p>
+      </>}
     </div>
   );
 }
