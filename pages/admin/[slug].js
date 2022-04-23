@@ -45,7 +45,7 @@ function PostManager() {
 
           <aside>
             <h3>Info</h3>
-            <p>Here's where you can write a post! Style your post using <a href="https://commonmark.org/help/">Markdown</a>, and upload images and gifs bellow!</p>
+            <p>Here&#39;s where you can write a post! Style your post using <a href="https://commonmark.org/help/">Markdown</a>, and upload images and gifs bellow!</p>
             
             <h3>Tools</h3>
             <button onClick={() => setPreview(!preview)}>{preview ? 'Edit' : 'Preview'}</button>
