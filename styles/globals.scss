@@ -42,7 +42,6 @@ a {
   width: 50px;
   height: 50px;
   animation: spin 2s linear infinite;
-  margin-left: 10vw;
 }
 @keyframes spin {
   0% { transform: rotate(0deg); }
@@ -56,7 +55,7 @@ a {
   background: white;
 
   padding: 0 10vw;
-  z-index: 99;
+  z-index: 999;
 
   display: flex;
   justify-content: center;
@@ -135,8 +134,9 @@ a {
   h2 { /* Post Title */
     margin: 0.3em 0;
   }
-  .heartCount {
+  .likeCount {
     display: block;
+    font-size: 0.9rem;
   }
 
   .published, .unpublished {
@@ -145,13 +145,29 @@ a {
     font-weight: 600;
   }
 }
+.homepagePosts .postCard {
+  margin: 3rem 0;
+}
+.rightHomepagePosts .postCard {
+  position: relative;
+  bottom: 35rem;
+}
+
 #main {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
-  padding: 5rem 2rem;
+    margin-bottom: 7rem;
+  }
+
+  padding: 7rem 2rem 5rem 2rem;
 
   h1 {
     margin: 0;
@@ -169,8 +185,11 @@ a {
   gap: 3rem;
   width: fit-content;
 
-  margin: 3rem 0;
+  margin: 3rem 0 2rem 0;
 }  
+.loadMoreButton {
+  
+}
 
 button {
   font-family: neue-haas-grotesk-text, sans-serif;

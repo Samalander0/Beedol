@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Post({
   admin = false,
-  hearts = true,
+  likes = true,
   published = true,
   username = "username",
   title = "Title",
@@ -28,9 +28,9 @@ export default function Post({
             {wordCount} words | {minutesToRead} min read
           </span>
   
-          {/* Show heart count if hearts is allowed */}
-          {hearts && (
-          <span className="likeCount">👍 {likeCount || 0} Likes</span>
+          {/* Show like count if like is allowed */}
+          {likes && (
+          <span className="likeCount">👍{likeCount || 0} Likes</span>
           )}
         </footer>
   
@@ -39,7 +39,7 @@ export default function Post({
           <>
             <Link href={`/admin/${slug}`}>
               <h3>
-                <button className="btn-blue">Edit</button>
+                <button>Edit</button>
               </h3>
             </Link>
   

@@ -4,24 +4,46 @@
   align-items: center;
   flex-direction: column;
 
-  height: 80vh;
+  height: calc(100vh - 70px);
   width: 100vw;
-
-  #title {
-    height: fit-content;
+ 
+  #headerText {
+    position: absolute;
+    left: 15rem;
     
-    h1 {
-      font-size: 5rem;
-      font-weight: 800;
-      margin: 0;
+    #title {
+      height: fit-content;
+      
+      h1 {
+        font-size: 5rem;
+        font-weight: 800;
+        margin: 0;
+      }
+    }
+    p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    } 
+  }
+  #posts {
+    position: absolute;
+    right: 6rem;
+    z-index: 0;
+
+    display: flex;
+    gap: 2rem;
+    
+    #leftPosts {
+      overflow: hidden;
+      height: calc(100vh - 70px);
+    }
+    #rightPosts {
+      overflow: hidden;
+      height: calc(100vh - 70px);
     }
   }
-  p {
-    font-size: 1.2rem;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-  }
-  aside {
-    
-  }
+}
+#main {
+  height: 100vh;
 }
