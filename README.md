@@ -13,8 +13,11 @@ Project Status: `In Development`
   - ~~Downgrade to older versions of packages~~
 - Styling
   - ~~Design in XD~~
-  - Code
+  - ~~Code~~
+  - Responsiveness
 - Homepage
-  - Text
-  - Posts
-- Featured Posts
+  - Header
+    - ~~Text~~
+    - ~~Posts~~
+  - Other homepage content
+- ~~Featured Posts~~

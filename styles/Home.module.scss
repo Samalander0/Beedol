@@ -10,6 +10,8 @@
   #headerText {
     position: absolute;
     left: 15rem;
+
+    transform: translateY(-35px); // Moves it up so that it's centered (Navbar is 70px tall)
     
     #title {
       height: fit-content;

@@ -99,7 +99,7 @@ export default function Posts(props) {
       <main id="main">
         <section>
           <h1>Featured Posts</h1>
-          <p>Read some of our curated featured posts! Want to be featured? Our team hand-revews each post, so if we see one we like, we'll add it here!</p>
+          <p>Read some of our curated featured posts! Want to be featured? Our team hand-revews each post, so if we see one we like, we&#39;ll add it here!</p>
           <div className="postFeed">
             <PostFeed posts={featuredPosts} />
           </div>
