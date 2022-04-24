@@ -112,7 +112,7 @@ export default function Home(props) {
       <aside id={styles.posts} className="homepagePosts">
         <div id={styles.leftPosts} ref={leftPosts}>
           {leftHomePosts.map((post, key) => {
-          return (<Post published={true} title={post.title} username={post.username} slug={post.slug} wordCount={post.words} minutesToRead={post.minutes} likes={false}/>)
+          return (<Post published={true} title={post.title} username={post.username} slug={post.slug} wordCount={post.words} minutesToRead={post.minutes} likes={false} key={key}/>)
           })}
         </div>
         <div id={styles.rightPosts} className="rightHomepagePosts" ref={rightPosts}>
