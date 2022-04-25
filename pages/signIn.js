@@ -20,7 +20,7 @@ export default function Enter(props) {
     <main className="signIn">
       <h1>Sign In/Create an Account</h1>
       <p>Welcome to the Beedol Community! Create an account or sign in to your existing account here!</p>
-      {user ? !username ? <UsernameForm /> : <SignOutButton /> : <SignInButton />}
+      {user ? !username ? <UsernameForm /> : <><SignOutButton /><Link href="/posts"><button style={{marginTop: "5px"}}>View Posts</button></Link></> : <SignInButton />}
     </main>
   </>);
 }

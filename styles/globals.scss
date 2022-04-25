@@ -87,25 +87,21 @@ a {
     transition: 0.3s ease-in-out;
   }
   
+  button {
+    margin-right: 2rem;
+  }
+  
   .buttons {
     position: absolute;
     right: $spacing;
     display: flex;
     align-items: center;
-
-    button {
-      margin-right: 2rem;
-    }
   }
   .buttonsUsername {
     position: absolute;
     right: calc($spacing + 45px);
     display: flex;
     align-items: center;
-
-    button {
-      margin-right: 2rem;
-    }
   }
 
   .menu {
