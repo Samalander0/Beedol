@@ -72,7 +72,6 @@ a {
     height: 25px;
     position: absolute;
     left: $spacing;
-    top: 42.5px;
 
     &:hover {
       cursor: pointer;
@@ -84,7 +83,6 @@ a {
     height: 25px;
     position: absolute;
     left: -7rem;
-    top: 42.5px;
 
     transition: 0.3s ease-in-out;
   }
