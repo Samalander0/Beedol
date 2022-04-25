@@ -63,31 +63,110 @@ a {
 
   box-shadow: 0px 12px 9px -8px rgba(0, 0, 0, 0.03);
 
+  $spacing: 5rem;
+  @media (max-width: 650px) {
+    $spacing: 3rem;
+  }
+  
   .logo {
     height: 25px;
     position: absolute;
-    left: 5rem;
+    left: $spacing;
 
     &:hover {
       cursor: pointer;
     }
+
+    transition: 0.3s ease-in-out;
   }
+  .logoHidden {
+    height: 25px;
+    position: absolute;
+    left: -7rem;
+
+    transition: 0.3s ease-in-out;
+  }
+  
   .buttons {
     position: absolute;
-    right: 5rem;
+    right: $spacing;
     display: flex;
     align-items: center;
 
-    img { //PFP
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-
-      box-shadow: 0px 12px 9px -12px rgba(0, 0, 0, 0.1);
-    }
     button {
       margin-right: 2rem;
     }
+  }
+  .buttonsUsername {
+    position: absolute;
+    right: calc($spacing + 45px);
+    display: flex;
+    align-items: center;
+
+    button {
+      margin-right: 2rem;
+    }
+  }
+
+  .menu {
+    position: absolute;
+    right: $spacing;
+
+    img {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+  .menuUsername {
+    position: absolute;
+    right: calc($spacing + 61px);
+    top: 19px;
+
+    img {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  .menuButtons {
+    position: absolute;
+    right: 2.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    button {
+      width: max-content;
+      margin-bottom: 0.3rem;
+    }
+
+    opacity: 1;
+    transition: 0.2s ease-in-out;
+  }
+  .hidden {
+    opacity: 0;
+  }
+  
+  .pfp {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+
+    box-shadow: 0px 12px 9px -12px rgba(0, 0, 0, 0.1);
+
+    position: absolute;
+    right: $spacing;
+  }
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0;
+  text-align: center;
+
+  @media (max-width: 410px) {
+    font-size: 2.5rem;
   }
 }
 
@@ -95,6 +174,12 @@ a {
   width: 250px;
   height: 250px;
   padding: 2rem;
+
+  @media (max-width: 1200px) {
+    width: 230px;
+    height: 230px;
+    padding: 1.5rem;
+  }
   
   display: flex;
   justify-content: center;
@@ -169,10 +254,6 @@ a {
 
   padding: 7rem 2rem 5rem 2rem;
 
-  h1 {
-    margin: 0;
-    font-size: 3rem;
-  }
   P {
     margin: 0;
     max-width: 45ch;
@@ -184,6 +265,14 @@ a {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 3rem;
   width: fit-content;
+
+  @media (max-width: 1050px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  @media (max-width: 710px) {
+    grid-template-columns: 1fr;
+  }
 
   margin: 3rem 0 2rem 0;
 }  
@@ -262,10 +351,6 @@ button {
       border-radius: 100%;
       margin-top: 3rem;
     }
-    h1 {
-      font-size: 3rem;
-      margin: 0;
-    }
     p {
       font-style: italic;
       margin: -0.5em 0 2rem 0;
@@ -281,17 +366,30 @@ button {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: calc(100vh - 70px);
+  min-height: calc(100vh - 166px);
+  padding: 3rem 5rem;
 
-  h1 {
-    font-size: 3rem;
-    margin: 0;
-  }
   .postFeed {
     grid-template-columns: 1fr 1fr;
+
+    @media (max-width: 660px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  h1 {
+    margin-top: 0;
+    @media (max-width: 660px) {
+      margin-bottom: -1rem;
+    }
   }
 
   form {
+    @media (max-width: 660px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
     input {
       border: none;
 
@@ -320,7 +418,12 @@ button {
       position: relative;
     }
     button {
-      margin-left: 1rem;
+      @media (min-width: 660px) {
+        margin-left: 1rem;
+      }
+      @media (max-width: 660px) {
+        margin-top: 0.5rem;
+      }
     }
 
     #errorMessage {
@@ -352,12 +455,11 @@ button {
   flex-direction: column;
 
   height: calc(100vh - 70px);
+  padding: 0 5rem;
   
-  h1 {
-    margin: 0;
-  }
   p {
     margin: 0 0 1rem 0;
+    text-align: center;
   }
   button {
     display: flex;

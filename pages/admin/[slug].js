@@ -37,7 +37,7 @@ function PostManager() {
       {post && (
         <>
           <section>
-            <h1>{post.title}</h1>
+            <h1 id={styles.title}>{post.title}</h1>
             <p>ID: {post.slug}</p>
 
             <PostForm postRef={postRef} defaultValues={post} preview={preview} />

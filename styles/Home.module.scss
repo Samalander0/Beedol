@@ -5,11 +5,20 @@
   flex-direction: column;
 
   height: calc(100vh - 70px);
-  width: 100vw;
  
   #headerText {
     position: absolute;
-    left: 15rem;
+    left: 220px;
+    @media (max-width: 1450px) {
+      left: 180px;
+    }
+    @media (max-width: 1250px) {
+      left: 120px;
+    }
+    @media (max-width: 1070px) {
+      left: 50%;
+      transform: translateX(-50%) translateY(-35px);
+    }
 
     transform: translateY(-35px); // Moves it up so that it's centered (Navbar is 70px tall)
     
@@ -20,6 +29,7 @@
         font-size: 5rem;
         font-weight: 800;
         margin: 0;
+        text-align: left;
       }
     }
     p {
@@ -30,8 +40,24 @@
   }
   #posts {
     position: absolute;
-    right: 6rem;
+    right: 150px;
     z-index: 0;
+
+    @media (max-width: 1450px) {
+      right: 50px;
+    }
+    @media (max-width: 1350px) {
+      right: -50px;
+    }
+    @media (max-width: 1250px) {
+      right: -100px;
+    }
+    @media (max-width: 1200px) {
+      right: -150px;
+    }
+    @media (max-width: 1070px) {
+      display: none;
+    }
 
     display: flex;
     gap: 2rem;

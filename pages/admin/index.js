@@ -13,6 +13,8 @@ import toast from 'react-hot-toast';
 
 import Metatags from "../../components/Metatags";
 
+import Media from 'react-media';
+
 export default function AdminPostsPage(props) {
   return (<>
     <Metatags title="Beedol Admin" description="Write & edit your posts"/>
@@ -96,7 +98,11 @@ function CreateNewPost() {
       <button type="submit" disabled={!isValid}>
         Create New Post
       </button>
-      <p id="errorMessage" className={isValid ? "hidden" : null}>☝️ Write a title!</p>
+      <Media query="(min-width: 660px)" render={() =>
+        (
+          <p id="errorMessage" className={isValid ? "hidden" : null}>☝️ Write a title!</p>
+        )}
+      />
     </form>
   );
 }

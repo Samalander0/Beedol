@@ -71,7 +71,7 @@ export default function Post(props) {
       </div>
 
       <aside id={styles.sidebar}>
-        <h1>{post?.title}</h1>
+        <h2>{post?.title}</h2>
         <span className="smallText">
           Written by{' '}
           <Link href={`/${post.username}/`}>
