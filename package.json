@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@splitbee/web": "^0.3.0",
     "firebase": "^8.2.1",
     "gsap": "^3.10.4",
     "lodash.debounce": "^4.0.8",

@@ -5,6 +5,10 @@ import {UserContext} from '../lib/context'; //Import in the User Context
 
 import {useUserData} from '../lib/hooks';
 
+// Splitbee (Analitics)
+import splitbee from '@splitbee/web';
+splitbee.init()
+
 function MyApp({ Component, pageProps }) {
   
   const userData = useUserData();

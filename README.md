@@ -6,7 +6,9 @@ Project Status: `In Development`
 - Frontend: `Next.js`
 - Database: `Firestore`
 - Auth: `Firebase`
-- Hosting: `Replit`
+- Hosting: `Vercel`
+
+(Made in Replit)
 
 ## TO DO:
 - ~~Fix Likes. Don't know why they're broken~~ :)
@@ -14,9 +16,10 @@ Project Status: `In Development`
 - Styling
   - ~~Design in XD~~
   - ~~Code~~
-  - Responsiveness
+  - ~~Responsiveness~~
+  - Responsive User page
 - Homepage
-  - Header
+  - ~~Header~~
     - ~~Text~~
     - ~~Posts~~
   - Other homepage content
