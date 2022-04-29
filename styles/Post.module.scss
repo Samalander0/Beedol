@@ -1,3 +1,6 @@
+$bg: #FFEEE9;
+$accent: #FF9472;
+
 #main {
   padding: 3rem;
   display: flex;
@@ -16,7 +19,7 @@
   
   #content {
     max-width: 75ch;
-    background: linear-gradient(164deg, rgba(199,234,255,1) 0%, rgba(172,217,244,1) 100%);
+    background: $bg;
     padding: 3rem 5rem;
     border-radius: 6px;
 
@@ -51,7 +54,7 @@
     hr {
       border: none;
       height: 1px;
-      background: #3da9fa;
+      background: $accent;
     }
     blockquote p {
       font-weight: 400;
@@ -67,7 +70,7 @@
         top: 0;
         left: -1.3em;
 
-        background: #3da9fa;
+        background: $accent;
         border-radius: 2px;
       }
     }
@@ -84,7 +87,7 @@
     width: 15rem;
     position: fixed;
     top: 50vh;
-    right: 1rem;
+    right: 2rem;
     transform: translateY(-50%);
 
     display: flex;
@@ -93,7 +96,7 @@
     flex-direction: column;
     text-align: right;
     
-    background: linear-gradient(164deg, rgba(199,234,255,1) 0%, rgba(172,217,244,1) 100%);
+    background: $bg;
     padding: 3rem 2rem;
     border-radius: 6px;
 
@@ -113,6 +116,7 @@
 
     h2 {
       font-size: 2rem;
+      margin: 0;
     }
     
     a {

@@ -15,6 +15,10 @@ $color-secondary: #F5C6B1;
 $color-accent: #F6976D;
 $color-text: #000000;
 
+// For posts
+$bg: #FFEEE9;
+$accent: #FF9472;
+
 html,
 body {
   padding: 0;
@@ -504,4 +508,23 @@ button {
     font-size: 0.8rem;
     font-weight: 300;
   }
+}
+
+.smallText {
+  font-size: 0.9rem;
+}
+
+::-webkit-scrollbar {
+  background: #f4e1db;
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #ffb59d;
+  border-radius: 500px;
+
+  transition: 0.2s ease-in-out;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff9877;
+  cursor: pointer;
 }

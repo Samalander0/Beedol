@@ -1,3 +1,6 @@
+$bg: #FFEEE9;
+$accent: #FF9472;
+
 .hidden {
   display: none;
 }
@@ -131,7 +134,7 @@
       margin-top: 3rem;
     }
     
-    background: linear-gradient(164deg, rgba(199,234,255,1) 0%, rgba(172,217,244,1) 100%);
+    background: $bg;
     padding: 3rem 2rem;
     border-radius: 6px;
 
@@ -169,7 +172,7 @@
   }
   #editor {
     width: 75ch;
-    background: linear-gradient(164deg, rgba(199,234,255,1) 0%, rgba(172,217,244,1) 100%);
+    background: $bg;
     padding: 3rem 5rem;
     border-radius: 6px;
     min-height: 40rem;
@@ -209,7 +212,7 @@
   }
   #preview {
     max-width: 75ch;
-    background: linear-gradient(164deg, rgba(199,234,255,1) 0%, rgba(172,217,244,1) 100%);
+    background: $bg;
     padding: 3rem 5rem;
     border-radius: 6px;
     margin: 0;
@@ -244,7 +247,7 @@
     hr {
       border: none;
       height: 1px;
-      background: #3da9fa;
+      background: $accent;
     }
     blockquote p {
       font-weight: 400;
@@ -260,7 +263,7 @@
         top: 0;
         left: -1.3em;
 
-        background: #3da9fa;
+        background: $accent;
         border-radius: 2px;
       }
     }
