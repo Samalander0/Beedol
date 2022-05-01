@@ -1,11 +1,5 @@
 /* 
 GLOBAL STYLING FILE
-
-TO DO:
-Enter page error message styling
-Navbar styling for when user is signed in
-User profile page
-404 Page
 */
 
 @import url("https://use.typekit.net/oue1wyi.css"); //Import font from Adobe Fonts
@@ -358,6 +352,9 @@ button {
   }
   .postFeed {
     grid-template-columns: 1fr 1fr;
+    @media (max-width: 660px) {
+      grid-template-columns: 1fr;
+    }
   }
 }
 

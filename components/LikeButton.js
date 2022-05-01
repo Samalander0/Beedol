@@ -1,14 +1,14 @@
 import { firestore, auth, increment } from '../lib/firebase';
 import { useDocument } from 'react-firebase-hooks/firestore';
 
-// Allows user to heart or like a post
+// Allows user to like a post
 export default function Like({ postRef }) {
-  // Listen to heart document for currently logged in user
+  // Listen to heart document for currently logged in user. Originally was called hearts and didn't make the switch to likes.
   const heartRef = postRef.collection('hearts').doc(auth.currentUser.uid);
   const [heartDoc] = useDocument(heartRef);
 
   // Create a user-to-post relationship
-  const addHeart = async () => {
+  const addLike = async () => {
     const uid = auth.currentUser.uid;
     const batch = firestore.batch();
 
@@ -19,7 +19,7 @@ export default function Like({ postRef }) {
   };
 
   // Remove a user-to-post relationship
-  const removeHeart = async () => {
+  const removeLike = async () => {
     const batch = firestore.batch();
 
     batch.update(postRef, { heartCount: increment(-1) });
@@ -29,8 +29,8 @@ export default function Like({ postRef }) {
   };
 
   return heartDoc?.exists ? (
-    <button onClick={removeHeart}>❌👍 Remove Like</button>
+    <button onClick={removeLike}>❌👍 Remove Like</button>
   ) : (
-    <button onClick={addHeart}>👍 Like</button>
+    <button onClick={addLike}>👍 Like</button>
   );
 }
