@@ -14,7 +14,7 @@ export default function Post({
   
    return (<>
     <Link href={`/${username}/${slug}`}>
-      <div className="postCard">
+      <a className="postCard">
         <Link href={`/${username}`}>
           <a>
             <strong>By @{username}</strong>
@@ -46,7 +46,7 @@ export default function Post({
             {published ? <p className="published">Live</p> : <p className="unpublished">Unpublished</p>}
           </>
         )}
-      </div>
+      </a>
     </Link>
   </>);
 }

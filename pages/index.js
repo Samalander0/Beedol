@@ -38,18 +38,18 @@ export default function Home(props) {
   // Featured posts
   const leftHomePosts = [
     {
-      title: "Placeholder Post",
-      slug: "/",
-      username: "John Doe",
-      words: "262",
-      minutes: "4",
+      title: "How to Solve Equations Correctly",
+      slug: "how-to-solve-equations-correctly",
+      username: "cosmic",
+      words: "501",
+      minutes: "6",
     },
     {
-      title: "Placeholder Post",
-      slug: "/",
-      username: "John Doe",
-      words: "262",
-      minutes: "4",
+      title: "How to Download The Beedol App",
+      slug: "how-to-download-beedol-as-an-app",
+      username: "sam",
+      words: "112",
+      minutes: "2",
     },
     {
       title: "Placeholder Post",
@@ -82,11 +82,11 @@ export default function Home(props) {
       minutes: "4",
     },
     {
-      title: "Placeholder Post",
-      slug: "/",
-      username: "John Doe",
-      words: "262",
-      minutes: "4",
+      title: "How to Write a Good Beedol Post",
+      slug: "how-to-write-a-good-beedol-post",
+      username: "cosmic",
+      words: "620",
+      minutes: "7",
     },
     {
       title: "Placeholder Post",
@@ -123,6 +123,13 @@ export default function Home(props) {
       </aside>
     </header>
     <main id={styles.main}>
+      <section id={styles.about}>
+        <div id={styles.aboutText}>
+          <h2>What is <span className="gradient">Beedol</span>?</h2>
+          <p>Beedol was created by high school student <a href="https://samalander.dev" target="_blank">Sam Cheng</a> to help students with learning about school topics and answering school questions. He found that it was frustrating searching up questions and getting websites with ads, fluff, and bad answers. Beedol solves these problems in multiple ways. It has a clean, minimalistic UI and fast page loading times. It also tells you exactly how long a post will take to read and shows like counts to help judge which posts are quality and helpful.</p>
+        </div>
+        <img src="/images/mockup.png"/>
+      </section>
     </main>
   </>)
 }

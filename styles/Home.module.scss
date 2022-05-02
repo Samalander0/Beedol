@@ -1,7 +1,11 @@
-#header {
+@mixin center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#header {
+  @include center;
   flex-direction: column;
 
   height: calc(100vh - 70px);
@@ -73,5 +77,28 @@
   }
 }
 #main {
-  height: 100vh;
+  #about {
+    min-height: 100vh;
+    background: #FFF7F5;
+    
+    @include center;
+    justify-content: space-evenly;
+
+    #aboutText {
+      max-width: 30rem;
+      justify-self: start;
+
+      h2 {
+        font-size: 2.6rem;
+        margin: 0;
+      }
+      p {
+        margin: 0;
+      }
+    }
+    img {
+      width: 37vw;
+      justify-self: end;
+    }
+  }
 }
