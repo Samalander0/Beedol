@@ -1,5 +1,6 @@
 import '../styles/globals.scss'
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import {Toaster} from 'react-hot-toast'; //Import the "React Hot Toast library which lets us create notifications (https://react-hot-toast.com/)"
 import {UserContext} from '../lib/context'; //Import in the User Context
 
@@ -17,6 +18,7 @@ function MyApp({ Component, pageProps }) {
     <UserContext.Provider value={userData}>
       <Navbar />
       <Component {...pageProps} />
+      <Footer />
       <Toaster/>
     </UserContext.Provider>
   );

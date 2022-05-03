@@ -80,7 +80,12 @@ $accent: #FF9472;
       border-radius: 6px;
     }
     a {
-      text-decoration: underline;
+      text-decoration: underline $accent;
+      transition: 0.2s ease-in-out;
+      
+      &:hover {
+        color: $accent;
+      }
     }
   }
   #sidebar {
@@ -120,7 +125,12 @@ $accent: #FF9472;
     }
     
     a {
-      text-decoration: underline;
+      text-decoration: underline $accent;
+      transition: 0.2s ease-in-out;
+      
+      &:hover {
+        color: $accent;
+      }
     }
     button {
       margin-top: 1rem;
