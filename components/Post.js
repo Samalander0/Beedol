@@ -13,40 +13,42 @@ export default function Post({
 }) {
   
    return (<>
-    <Link href={`/${username}/${slug}`}>
-      <a className="postCard">
-        <Link href={`/${username}`}>
-          <a>
-            <strong>By @{username}</strong>
-          </a>
-        </Link>
-  
-        <h2>{title}</h2>
-  
-        <footer>
-          <span>
-            {wordCount} words | {minutesToRead} min read
-          </span>
-  
-          {/* Show like count if like is allowed */}
-          {likes && (
-          <span className="likeCount">👍{likeCount || 0} Likes</span>
+    <Link href={`/${username}/${slug}`} passHref>
+      <div className="postCard">
+        <a href={`/${username}/${slug}`}>
+          <Link href={`/${username}`}>
+            <a>
+              <strong>By @{username}</strong>
+            </a>
+          </Link>
+    
+          <h2>{title}</h2>
+    
+          <footer>
+            <span>
+              {wordCount} words | {minutesToRead} min read
+            </span>
+    
+            {/* Show like count if like is allowed */}
+            {likes && (
+            <span className="likeCount">👍{likeCount || 0} Likes</span>
+            )}
+          </footer>
+    
+          {/* If admin view, show extra controls for user */}
+          {admin && (
+            <>
+              <Link href={`/admin/${slug}`}>
+                <h3>
+                  <a><button>Edit</button></a>
+                </h3>
+              </Link>
+    
+              {published ? <p className="published">Live</p> : <p className="unpublished">Unpublished</p>}
+            </>
           )}
-        </footer>
-  
-        {/* If admin view, show extra controls for user */}
-        {admin && (
-          <>
-            <Link href={`/admin/${slug}`}>
-              <h3>
-                <button>Edit</button>
-              </h3>
-            </Link>
-  
-            {published ? <p className="published">Live</p> : <p className="unpublished">Unpublished</p>}
-          </>
-        )}
-      </a>
+        </a>
+      </div>
     </Link>
   </>);
 }

@@ -4,6 +4,20 @@
   align-items: center;
 }
 
+@keyframes reveal {
+  from {opacity: 0.8;}
+  to {clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); opacity: 1;}
+}
+@mixin reveal($duration, $delay) {
+  animation-name: reveal;
+  animation-duration: $duration;
+  animation-delay: $delay;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+}
+
 #header {
   @include center;
   flex-direction: column;
@@ -13,6 +27,7 @@
   #headerText {
     position: absolute;
     left: 220px;
+    
     @media (max-width: 1450px) {
       left: 180px;
     }
@@ -28,24 +43,39 @@
     
     #title {
       height: fit-content;
+      @include reveal(2s, 0);
       
       h1 {
-        font-size: 5rem;
+        font-size: 5.5rem;
         font-weight: 800;
         margin: 0;
         text-align: left;
       }
+
+      h1, span {
+        line-height: 1.1em;
+      }
     }
+    
     p {
       font-size: 1.2rem;
-      margin-top: 1rem;
-      margin-bottom: 0.5rem;
+      margin-top: 0.2rem;
+      margin-bottom: 1.2rem;
+      
+      @include reveal(1.5s, 1s);
     } 
+
+    button {
+      @include reveal(1s, 2.5s);
+    }
   }
   #posts {
     position: absolute;
     right: 150px;
     z-index: 0;
+
+    @include reveal(1.5s, 3.5s);
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
 
     @media (max-width: 1450px) {
       right: 50px;
@@ -84,21 +114,51 @@
     @include center;
     justify-content: space-evenly;
 
+    @media (max-width: 700px) {
+      padding: 0 5rem;
+    }
+    @media (max-width: 1080px) {
+      flex-direction: column;
+      justify-content: center;
+      gap: 5rem;
+    }
+
     #aboutText {
       max-width: 30rem;
       justify-self: start;
+
+      opacity: 0;
 
       h2 {
         font-size: 2.6rem;
         margin: 0;
       }
       p {
-        margin: 0;
+        margin: 0.6rem 0 1.1rem 0;
+        font-size: 1.1rem;
+        line-height: 1.2em;
+        
+        abbr {
+          text-decoration: underline dotted grey;
+        }
       }
     }
     img {
-      width: 37vw;
+      max-width: 37vw;
       justify-self: end;
+
+      opacity: 0;
+
+      @media (max-width: 1080px) {
+        max-width: 30rem;
+      }
+      @media (max-width: 635px) {
+        max-width: calc(100vw - 10rem);
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }

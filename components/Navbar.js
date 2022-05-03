@@ -52,14 +52,14 @@ export default function Navbar() {
                 <div className={!username ? "menu" : "menuUsername"}>
                   <div className="menuButtons">
                     <Link href="/posts"> 
-                      <button className={menuOpen ? null : "hidden"}>Read Posts</button>
+                      <a><button className={menuOpen ? null : "hidden"}>Read Posts</button></a>
                     </Link>
                     
                     {/* user is signed-in and has username */}
                     {username && (
                       <>
                         <Link href="/admin">
-                          <button className={menuOpen ? null : "hidden"}>Write Posts</button>
+                          <a><button className={menuOpen ? null : "hidden"}>Write Posts</button></a>
                         </Link>
                         <button onClick={signOut} className={menuOpen ? null : "hidden"}>Sign Out</button>
                       </>
@@ -83,14 +83,14 @@ export default function Navbar() {
               {matches.large && 
                 <div className={!username ? "buttons" : "buttonsUsername"}>
                   <Link href="/posts"> 
-                    <button>Read Posts</button>
+                    <a><button>Read Posts</button></a>
                   </Link>
                   
                   {/* user is signed-in and has username */}
                   {username && (
                     <>
                       <Link href="/admin">
-                        <button>Write Posts</button>
+                        <a><button>Write Posts</button></a>
                       </Link>
                       <button onClick={signOut}>Sign Out</button>
                     </>
