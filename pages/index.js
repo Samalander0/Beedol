@@ -125,13 +125,13 @@ export default function Home(props) {
       </div>
       <aside id={styles.posts} className="homepagePosts">
         <div id={styles.leftPosts} ref={leftPosts}>
-          {leftHomePosts.map((post) => {
-          return (<Post published={true} title={post.title} username={post.username} slug={post.slug} wordCount={post.words} minutesToRead={post.minutes} likes={false}/>)
+          {leftHomePosts.map((post, key) => {
+          return (<Post published={true} title={post.title} username={post.username} slug={post.slug} wordCount={post.words} minutesToRead={post.minutes} likes={false} key={key}/>)
           })}
         </div>
         <div id={styles.rightPosts} className="rightHomepagePosts" ref={rightPosts}>
-          {rightHomePosts.map((post) => {
-          return (<Post published={true} title={post.title} username={post.username} slug={post.slug} wordCount={post.words} minutesToRead={post.minutes} likes={false}/>)
+          {rightHomePosts.map((post, key) => {
+          return (<Post published={true} title={post.title} username={post.username} slug={post.slug} wordCount={post.words} minutesToRead={post.minutes} likes={false} key={key}/>)
           })}
         </div>
       </aside>
@@ -140,7 +140,7 @@ export default function Home(props) {
       <section id={styles.about} ref={about}>
         <div id={styles.aboutText}>
           <h2>Hey, Welcome to <span className="gradient">Beedol</span>!</h2>
-          <p>I know what you're thinking: "Yaaay... another lame app... I wonder how many sh*tty ads this one will show me." But this isn't your average app... here's what Beedol can offer for you: <abbr title="Well, not maybe not tones yet. Write some posts people!">TONES</abbr> of how to articles written to help YOU succeed, a community of students and educators writing and reading beautiful posts, and guess what? It's completely free. That's right. No in app purchases. No ads. Completely free. So what are you waiting for? Hop right in!</p>
+          <p>I know what you&apos;re thinking: &quot;Yaaay... another lame app... I wonder how many sh*tty ads this one will show me.&quot; But this isn't your average app... here&apos;s what Beedol can offer for you: <abbr title="Well, not maybe not tones yet. Write some posts people!">TONES</abbr> of how to articles written to help YOU succeed, a community of students and educators writing and reading beautiful posts, and guess what? It&apos;s completely free. That&apos;s right. No in app purchases. No ads. Completely free. So what are you waiting for? Hop right in!</p>
           <Link href="/signIn">
             <a><button>Create an Account</button></a>
           </Link>
