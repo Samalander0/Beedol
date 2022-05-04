@@ -6,7 +6,7 @@ export default function guidelines() {
     <Metatags title="Beedol Terms & Guidelines" description="Take a look at Beedol's terms of service and community guidelines"/>
     <main className="guidelinesPage">
       <h1>Beedol Terms & Guidelines</h1>
-      <p>Hey! I’m glad you’re thinking about signing up for Beedol, or if you already have, taking a look at the guidelines again. First of all, if you want to use Beedol, you’ll need to follow the Beedol Community Guidelines below. As a user of Beedol, we won’t collect or share any of your data. We also might email you, but we promise to respect your time and not spam your inbox.</p>
+      <p>Hey! I’m glad you&apos;re thinking about signing up for Beedol, or if you already have, taking a look at the guidelines again. First of all, if you want to use Beedol, you’ll need to follow the Beedol Community Guidelines below. As a user of Beedol, we won’t collect or share any of your data. We also might email you, but we promise to respect your time and not spam your inbox.</p>
       <h2>Community Guidelines</h2>
       <p>First of all, this isn’t an exclusive list. Our moderators can decide what posts they want to delete, and if you will get banned or not. Here are some things that you should/should not do:</p>
       <h3>What you should do:</h3>
