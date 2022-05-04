@@ -73,10 +73,10 @@ export default function Post(props) {
       <aside id={styles.sidebar}>
         <h2>{post?.title}</h2>
         <span className="smallText">
-          Written by{' '}
-          <Link href={`/${post.username}/`}>
+          Written by {' '}
+          <p style={{display: "inline"}}><Link href={`/${post.username}/`}>
             <a className="infoText">@{post.username}</a>
-          </Link>{' '}
+          </Link></p> {' '}
           on {date.substring(0,10)}
         </span>
         

@@ -145,7 +145,7 @@ export default function Home(props) {
             <a><button>Create an Account</button></a>
           </Link>
         </div>
-        <Link href="cosmic/how-to-write-a-good-beedol-post"><img src="/images/mockup.png"/></Link>
+        <Link href="cosmic/how-to-write-a-good-beedol-post"><img src="/images/mockup.png" alt="A Beedol post on a computer"/></Link>
       </section>
     </main>
   </>)

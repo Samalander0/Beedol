@@ -124,14 +124,6 @@ $accent: #FF9472;
       margin: 0;
     }
     
-    a {
-      text-decoration: underline $accent;
-      transition: 0.2s ease-in-out;
-      
-      &:hover {
-        color: $accent;
-      }
-    }
     button {
       margin-top: 1rem;
 

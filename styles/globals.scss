@@ -31,6 +31,14 @@ a {
   color: inherit;
   text-decoration: none;
 }
+p a {
+  text-decoration: underline $accent;
+  transition: 0.2s ease-in-out;
+  
+  &:hover {
+    color: $accent;
+  }
+}
 
 // Loader
 .loader {
@@ -168,14 +176,6 @@ $spacing: 5rem;
 
   .logo {
     height: 25px;
-  }
-  a {
-    text-decoration: underline $accent;
-    transition: 0.2s ease-in-out;
-    
-    &:hover {
-      color: $accent;
-    }
   }
 }
 
@@ -479,6 +479,7 @@ button {
   p {
     margin: 0 0 1rem 0;
     text-align: center;
+    max-width: 70ch;
   }
   button {
     display: flex;
@@ -496,6 +497,7 @@ button {
   h3 {
     margin: 0;
   }
+  
   input {
   border: none;
 
@@ -526,6 +528,20 @@ button {
   form p {
     font-size: 0.8rem;
     font-weight: 300;
+  }
+}
+
+.guidelinesPage {
+  display: flex;
+  flex-direction: column;
+
+  margin: 5rem 30vw;
+  @media (max-width: 500px) {
+    margin: 5rem 20vw;
+  }
+
+  h1 {
+    text-align: left;
   }
 }
 

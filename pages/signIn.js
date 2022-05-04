@@ -19,7 +19,7 @@ export default function Enter(props) {
     <Metatags title="Sign Up/Sign In" description="Create an account or sign in to Beedol"/>
     <main className="signIn">
       <h1>Sign In/Create an Account</h1>
-      <p>Welcome to the Beedol Community! Create an account or sign in to your existing account here!</p>
+      <p>Welcome to the Beedol Community! Create an account or sign in to your existing account here! Also, make sure to check out our <Link href="/guidelines"><a>Terms and Guidelines</a></Link></p>
       {user ? !username ? <UsernameForm /> : <><SignOutButton /><Link href="/posts"><button style={{marginTop: "5px"}}>View Posts</button></Link></> : <SignInButton />}
     </main>
   </>);
