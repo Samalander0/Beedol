@@ -1,4 +1,6 @@
-# Hello There! Welcome to the Beedol source code!
+# Welcome to the Beedol Source Code
+👉 [Launch Beedol](https://beedol.app)
+
 Project Status: `In Development`
 
 ## Tech Stack
@@ -9,18 +11,3 @@ Project Status: `In Development`
 - Hosting: `Vercel`
 
 (Made in Replit)
-
-## TO DO:
-- ~~Fix Likes. Don't know why they're broken~~ :)
-  - ~~Downgrade to older versions of packages~~
-- Styling
-  - ~~Design in XD~~
-  - ~~Code~~
-  - ~~Responsiveness~~
-  - Responsive User page
-- Homepage
-  - ~~Header~~
-    - ~~Text~~
-    - ~~Posts~~
-  - Other homepage content
-- ~~Featured Posts~~

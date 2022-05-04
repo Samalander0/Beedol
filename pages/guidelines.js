@@ -8,7 +8,7 @@ export default function guidelines() {
       <h1>Beedol Terms & Guidelines</h1>
       <p>Hey! I’m glad you&apos;re thinking about signing up for Beedol, or if you already have, taking a look at the guidelines again. First of all, if you want to use Beedol, you’ll need to follow the Beedol Community Guidelines below. As a user of Beedol, we won’t collect or share any of your data. We also might email you, but we promise to respect your time and not spam your inbox.</p>
       <h2>Community Guidelines</h2>
-      <p>First of all, this isn’t an exclusive list. Our moderators can decide what posts they want to delete, and if you will get banned or not. Here are some things that you should/should not do:</p>
+      <p>First of all, this isn&apos;t an exclusive list. Our moderators can decide what posts they want to delete, and if you will get banned or not. Here are some things that you should/should not do:</p>
       <h3>What you should do:</h3>
       <ul>
         <li>Write well-written articles about school related topics (Math, Science, English, World Languages, etc.)</li>
@@ -16,7 +16,7 @@ export default function guidelines() {
         <li>Read and learn from current articles. If you like it, like it!</li>
         <li>Share true, fact checked information. Site your sources!</li>
       </ul>
-      <h3>What you shouldn't do:</h3>
+      <h3>What you shouldn&apos;t do:</h3>
       <ul>
         <li>Don’t harass others.</li>
         <li>Don’t participate or promote hateful content.</li>
