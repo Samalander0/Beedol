@@ -5,10 +5,7 @@ import { firestore, fromMillis, postToJSON } from '../lib/firebase';
 const Sitemap = () => {};
 
 export async function getServerSideProps({ res }) {
-  const baseUrl = {
-    development: "https://Beedol.samalander.repl.co",
-    production: "https://beedol.app",
-  }[process.env.NODE_ENV];
+  const baseUrl = "https://beedol.app";
 
   const postsQuery = firestore
     .collectionGroup('posts')
