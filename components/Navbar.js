@@ -30,7 +30,7 @@ export default function Navbar() {
           <>
             {matches.small && 
               <Link href="/">
-                <img src="/images/logo.svg" className={!menuOpen ? "logo" : "logoHidden"}/>
+                <img src="/images/logo.svg" alt="Logo" className={!menuOpen ? "logo" : "logoHidden"}/>
               </Link>
             }
             {matches.large &&
