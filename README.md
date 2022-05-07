@@ -12,6 +12,26 @@ Project Status: `In Development`
 
 (Made in Replit)
 
+## Full Feature List
+- Google-Authenitcated accounts
+  - One-click sign in
+- Advanced security rules
+- Write posts in [Markdown](https://www.markdownguide.org/basic-syntax/)
+  - Simple styling and you can embed images and gifs
+- Like posts
+- View how long a post will take to read/how many characters it has
+- Fully responsive
+- Super SEO Friendly
+  - Each post has generated metatags
+  - Each post/page is automatically added to a sitemap submitted to Google & Bing. This means that you can search through Beedol however you want. For example, typing `site:beedol.app` into Google will show all of Beedol's indexed pages. You could search `site:beedol.app Equations` to search for posts about equations.
+    - [Google & Bing take a while to update, so all pages may not be indexed](https://i.imgur.com/iioVLC5.png).
+- Featured posts
+- User profiles
+  - Beedol pulls your account's image and name from Google
+- Custom usernames
+- **An actual App!**
+  - Beedol is a [Progressive Web App](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/)! This means that it can be installed as an app on virtually ANY device: IOS, Android, Windows, and more!
+
 ## CTRL + SHIFT
 ### Beedol was submitted to the CTRL SHIFT competition. Here's the project description:
 
@@ -22,20 +42,26 @@ Beedol solves a problem that many students have: Finding reliable and quick answ
 Take a look at this Beedol article written by a student: https://beedol.app/cosmic/how-to-solve-equations-correctly . Beedol teaches students how to write and will provide writing resources. It fosters an ecosystem of learning and collaboration. Beedol has no ads and a smooth, clean UI to help users get the information they need quickly. Users can write posts using Markdown, a text-based way to style writing (https://commonmark.org/help/). This means that users can create elements like links, lists, headers, quotes, and codeblocks without knowing HTML.
 
 **What tools does Beedol offer to help users write posts?**
+
 Beedol lets users use markdown to style their posts. Beedol also offers a preview so that users can see what their posts will look like without publishing them. Beedol also offers a system to upload images and GIFs. Beedol also lets users toggle if their post is published or not.
 
 **How does Beedol ensure safety?**
+
 To write a post on Beedol, you must sign up with a Google account. It's an easy way for users to sign in and an extra level of security. The Beedol homepage offers two post feeds: Featured posts (Posts verified by Beedol admins), and Recent posts which shows all of the most recent posts. Beedol uses a Firebase Backend to get a quick and mobile-friendly way for admins to delete and view posts (https://i.imgur.com/hGd1bxp.png)
 
 **How does Beedol ensure security?**
+
 As I mentioned, Beedol uses Google's Firebase as a database. Firebase has built in security, but also manages authentication. Beedol's robust security rules ensure that only authenticated users can edit and change their own data. Firebase also only accepts auth attempts from the beedol.app URL in addition to the test/development server. This means that even if someone were able to clone Beedol (The code is Open Source), they wouldn't be able to change any of the data.
 
 **How did you make Beedol?**
+
 Beedol was my first Firebase project, and one of my many Next.js/React projects. I created the base from a tutorial, then created my own UI and added many new features. Beedol uses 15 node packages to manage things from animations (GSAP) to analytics (Splitbee). Beedol's UI was created first in Adobe XD, then in SASS (https://sass-lang.com/), an addon to CSS. Beedol is ~2/3 JS and ~1/3 CSS.  Beedol has over 1200 lines of hand coded CSS, and it was really fun to make.
 
 ### Stuff below was not included in the submission because I forgot to add it.
 **SEO?**
+
 Each post has it's own SEO tags generated and is added to the sitemap, even if something changes!
 
 **You call Beedol an app. Is it actually an app?**
+
 Yes! Beedol is an app and you can download it on IOS, Android, and Windows! See this post: [https://beedol.app/sam/how-to-download-beedol-as-an-app](https://beedol.app/sam/how-to-download-beedol-as-an-app)

@@ -55,10 +55,7 @@ p a {
 }
 
 // Spacing for the navbar and footer
-$spacing: 5rem;
-@media (max-width: 650px) {
-  $spacing: 3rem;
-}
+$spacing: 3rem;
 
 //Navbar
 .navbar {
@@ -136,7 +133,7 @@ $spacing: 5rem;
 
   .menuButtons {
     position: absolute;
-    right: 2.5rem;
+    right: 1rem;
 
     display: flex;
     flex-direction: column;
@@ -148,7 +145,7 @@ $spacing: 5rem;
     }
 
     opacity: 1;
-    transition: 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
   }
   .hidden {
     opacity: 0;
