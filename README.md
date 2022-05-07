@@ -13,7 +13,8 @@ Project Status: `In Development`
 (Made in Replit)
 
 ## CTRL + SHIFT
-Beedol was submitted to the CTRL SHIFT competition. Here's the project description:
+### Beedol was submitted to the CTRL SHIFT competition. Here's the project description:
+
 TLDR: Beedol is a place for students and teachers to write how-to articles for other students. It was coded entirely by hand using NextJs and Firebase.
 
 Beedol solves a problem that many students have: Finding reliable and quick answers to smaller questions. For example, if I have a question about the order of operations, normally, I'd have to make a search on Google and sort through a bunch of annoying websites filled with ads just trying to make money. On Beedol, you will be able to search for something and get a bunch of articles written by other students and teachers on how you can do something. Beedol tells you exactly how many characters there are in an article and how long it will take to read. 
