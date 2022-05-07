@@ -35,3 +35,6 @@ Beedol was my first Firebase project, and one of my many Next.js/React projects.
 ### Stuff below was not included in the submission because I forgot to add it.
 SEO?
 Each post has it's own SEO tags generated and is added to the sitemap, even if something changes!
+
+You call Beedol an app. Is it actually an app?
+Yes! Beedol is an app and you can download it on IOS, Android, and Windows! See this post: [https://beedol.app/sam/how-to-download-beedol-as-an-app](https://beedol.app/sam/how-to-download-beedol-as-an-app)
