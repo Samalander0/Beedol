@@ -192,7 +192,7 @@ export default function Home(props) {
       </section>
       <section id={styles.features} ref={features}>
         <h2>Features to help <span className="gradient">YOU</span> out</h2>
-        <p className={styles.text}>Beedol was made by students, for students to help them out. We know what it's like to be a student. The panic before a test, needing to know a bunch of concepts. The one homework question that you can't find the answer to. A problem that you can't figure out. Beedol is here for YOU.</p>
+        <p className={styles.text}>Beedol was made by students, for students to help them out. We know what it&apos;s like to be a student. The panic before a test, needing to know a bunch of concepts. The one homework question that you can&apos;t find the answer to. A problem that you can&apos;t figure out. Beedol is here for YOU.</p>
         <div id={styles.featuresList}>
           <div id={styles.topFeatures} ref={topFeatures}>
             <p title="Sign in with Google in one click!">One-Click Sign In</p>
@@ -212,7 +212,7 @@ export default function Home(props) {
       </section>
       <section id={styles.cta} ref={cta}>
         <h2>What are you waiting for?</h2>
-        <p>What's the holdup? Hop right into the Beedol community by creating an account below. If you're not convinced, you can check out some posts by clicking the Start Learning button!</p>
+        <p>What&apos;s the holdup? Hop right into the Beedol community by creating an account below. If you&apos;re not convinced, you can check out some posts by clicking the Start Learning button!</p>
         <div>
           <Link href="/signIn"><button>Create an Account</button></Link>
           <Link href="/posts"><button>Start Learning</button></Link>
