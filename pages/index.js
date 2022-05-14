@@ -22,6 +22,13 @@ export default function Home(props) {
 
   const about = useRef();
 
+  const features = useRef();
+
+  const topFeatures = useRef();
+  const bottomFeatures = useRef();
+
+  const cta = useRef();
+
   useEffect(() => {
     gsap.to(leftPosts.current.children, {
       y: '-15rem',
@@ -39,11 +46,47 @@ export default function Home(props) {
         start: "top top"
       }
     });
+    
     gsap.to(about.current.children, {
       opacity: 1,
-      duration: 2,
+      duration: 1,
       scrollTrigger: {
         trigger: about.current,
+        start: "top center"
+      }
+    });
+
+    gsap.to(topFeatures.current, {
+      x: -500,
+      scrollTrigger: {
+        trigger: features.current,
+        start: "top center",
+        scrub: true
+      }
+    })
+    gsap.to(bottomFeatures.current, {
+      x: 500,
+      scrollTrigger: {
+        trigger: features.current,
+        start: "top center",
+        scrub: true
+      }
+    })
+
+    gsap.to(features.current.children, {
+      opacity: 1,
+      duration: 1,
+      scrollTrigger: {
+        trigger: features.current,
+        start: "top center"
+      }
+    });
+
+    gsap.to(cta.current.children, {
+      opacity: 1,
+      duration: 1,
+      scrollTrigger: {
+        trigger: cta.current,
         start: "top center"
       }
     });
@@ -146,6 +189,34 @@ export default function Home(props) {
           </Link>
         </div>
         <Link href="cosmic/how-to-write-a-good-beedol-post"><img src="/images/mockup.png" alt="A Beedol post on a computer"/></Link>
+      </section>
+      <section id={styles.features} ref={features}>
+        <h2>Features to help <span className="gradient">YOU</span> out</h2>
+        <p className={styles.text}>Beedol was made by students, for students to help them out. We know what it's like to be a student. The panic before a test, needing to know a bunch of concepts. The one homework question that you can't find the answer to. A problem that you can't figure out. Beedol is here for YOU.</p>
+        <div id={styles.featuresList}>
+          <div id={styles.topFeatures} ref={topFeatures}>
+            <p title="Sign in with Google in one click!">One-Click Sign In</p>
+            <p title="Write your posts in Markdown!">Markdown Writing</p>
+            <p title="Like posts that you like! Gauge how good a post is by how many likes it has!">Like (👍) Posts</p>
+            <p title="See how long a post will take to read!">Post Read Time & Character Count</p>
+            <p title="Click on a user's name to go to their profile and read all of their posts!">User Profiles</p>
+          </div>
+          <div id={styles.bottomFeatures} ref={bottomFeatures}>
+            <p title="You can upload images and gifs with our built in uploader!">Add Images & Gifs</p>
+            <p title="Beedol can be installed as an app on most devices!">Mobile & Desktop Apps</p>
+            <p title="Type site:beedol.app followed by your search into any search engine!">Search With Any Search Engine</p>
+            <p title="Hand-reviewed featured posts!">Featured Posts</p>
+            <p title="Make it personal! Create your own custom username!">Custom Usernames</p>
+          </div>
+        </div>
+      </section>
+      <section id={styles.cta} ref={cta}>
+        <h2>What are you waiting for?</h2>
+        <p>What's the holdup? Hop right into the Beedol community by creating an account below. If you're not convinced, you can check out some posts by clicking the Start Learning button!</p>
+        <div>
+          <Link href="/signIn"><button>Create an Account</button></Link>
+          <Link href="/posts"><button>Start Learning</button></Link>
+        </div>
       </section>
     </main>
   </>)

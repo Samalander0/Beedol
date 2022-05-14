@@ -1,3 +1,5 @@
+$accent: #ffebe6;
+
 @mixin center {
   display: flex;
   justify-content: center;
@@ -107,9 +109,13 @@
   }
 }
 #main {
+  h2 {
+    font-size: 2.6rem;
+    margin: 0;
+  }
   #about {
     min-height: 100vh;
-    background: #FFF7F5;
+    background: $accent;
     
     @include center;
     justify-content: space-evenly;
@@ -129,10 +135,6 @@
 
       opacity: 0;
 
-      h2 {
-        font-size: 2.6rem;
-        margin: 0;
-      }
       p {
         margin: 0.6rem 0 1.1rem 0;
         font-size: 1.1rem;
@@ -159,6 +161,104 @@
       &:hover {
         cursor: pointer;
       }
+    }
+  }
+  #features {
+    @include center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10rem 0;
+    text-align: center;
+
+    .text, h2 {
+      opacity: 0;
+    }
+    
+    .text {
+      max-width: 75ch;
+      font-size: 1.1rem;
+    }
+
+    #featuresList {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      width: 600px;
+      overflow: hidden;
+
+      position: relative;
+
+      opacity: 0;
+
+      &:before {
+        content: "";
+        width: 10px;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        background: linear-gradient(90deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%);
+        z-index: 2;
+      }
+      &:after {
+        content: "";
+        width: 10px;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 100%);
+        z-index: 2;
+      }
+      
+      div {
+        display: flex;
+
+        p {
+          padding: 0.2em 2em;
+          margin: 0.5rem;
+          border-radius: 3rem;
+
+          width: max-content;
+          
+          background-image: url(/images/gradient.svg);
+          background-size: cover;
+          color: white;
+        }
+      }
+
+      #topFeatures {
+        position: relative;
+        left: 250px;
+      }
+      #bottomFeatures {
+        position: relative;
+        right: 300px;
+      }
+    }
+  }
+  #cta {
+    @include center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10rem 0;
+    text-align: center;
+
+    background: $accent;
+
+    h2, p, div {
+      opacity: 0,
+    }
+    p {
+      max-width: 75ch;
+      font-size: 1.1rem;
+    }
+    button {
+      margin: 0 1rem;
     }
   }
 }
