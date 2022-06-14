@@ -33,7 +33,7 @@ Project Status: `In Development`
   - Beedol is a [Progressive Web App](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/)! This means that it can be installed as an app on virtually ANY device: IOS, Android, Windows, and more!
 
 ## CTRL + SHIFT
-### Beedol was submitted to the CTRL SHIFT competition. Here's the project description:
+### Beedol was submitted to the CTRL SHIFT competition and won the Honorable Mention! Here's the submitted project description:
 
 TLDR: Beedol is a place for students and teachers to write how-to articles for other students. It was coded entirely by hand using NextJs and Firebase.
 
